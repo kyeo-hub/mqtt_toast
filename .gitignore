@@ -1,0 +1,50 @@
+# Node.js dependencies
+node_modules/
+
+# Build outputs
+/dist
+/build
+/out
+/target
+
+# Development tools
+.vite
+.env*
+!.env.example
+
+# Logs
+*.log
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+
+# Tauri specific
+src-tauri/target/
+src-tauri/**/*.so
+src-tauri/**/*.dll
+src-tauri/**/*.dylib
+
+# Backup files
+*.bak
+*.backup
+src-tauri-backup/
+
+# Test files
+test_*.js
+*_test.js
+
+# Generated icon files
+app-icon.png
+
+# Documentation
+ICON_GENERATION.md
+
+# Temporary files
+*.tmp
+*.temp
+*.crt

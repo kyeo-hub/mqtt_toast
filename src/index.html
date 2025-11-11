@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MQTT Toast (Tauri)</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>MQTT Toast</h1>
+      <div class="form">
+        <input id="host" placeholder="Broker host (e.g. k57d...)" />
+        <input id="port" placeholder="Port (8883)" value="8883" />
+        <input id="topic" placeholder="Topic (testtopic/1)" />
+        <input id="user" placeholder="Username (optional)" />
+        <input id="pass" placeholder="Password (optional)" type="password" />
+        <div>
+          <label>CA file:</label>
+          <input id="cafile" type="file" />
+        </div>
+        <div class="buttons">
+          <button id="saveCa">上传证书文件</button>
+          <button id="start">开始订阅</button>
+          <button id="stop">停止订阅</button>
+        </div>
+        <div style="margin-top:8px">
+          <label><input type="checkbox" id="autostart" /> 开机自启动</label>
+        </div>
+      </div>
+      <div id="log" class="log"></div>
+    </div>
+
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>

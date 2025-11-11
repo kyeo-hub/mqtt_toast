@@ -1,0 +1,5 @@
+body { font-family: Arial, sans-serif; background:#f6f8fa; margin:0; padding:20px }
+.container { max-width:720px; margin:0 auto; background:white; padding:20px; border-radius:8px; box-shadow: 0 6px 18px rgba(0,0,0,0.06)}
+.form input { display:block; width:100%; padding:8px; margin:8px 0 }
+.buttons { display:flex; gap:8px }
+.log { margin-top:16px; background:#111; color:#fff; padding:8px; height:220px; overflow:auto; }
