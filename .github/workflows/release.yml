@@ -76,6 +76,10 @@ jobs:
       # 使用 Rust 缓存，加快安装速度
       - uses: Swatinem/rust-cache@v2
  
+      # 安装 tauri-cli
+      - name: Install Tauri CLI
+        run: cargo install tauri-cli
+ 
       - name: install dependencies (ubuntu only)
         if: matrix.platform == 'ubuntu-latest'
         run: |
