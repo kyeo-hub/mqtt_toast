@@ -27,7 +27,10 @@ jobs:
         cache: 'pnpm'
 
     - name: Install pnpm
-      run: if ! command -v pnpm &> /dev/null; then npm install -g pnpm; fi
+      uses: pnpm/action-setup@v4
+      with:
+        version: 9
+        run_install: false
 
     - name: Install Rust stable
       uses: dtolnay/rust-toolchain@stable
