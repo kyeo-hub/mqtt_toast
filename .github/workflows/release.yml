@@ -91,25 +91,10 @@ jobs:
       - name: Install rsw
         run: cargo install rsw
  
-      # 获取 pnpm 缓存路径
-      - name: Get pnpm cache directory path
-        id: pnpm-cache-dir-path
-        run: echo "dir=$(pnpm store path)" >> $GITHUB_OUTPUT
- 
-      # 使用 pnpm 缓存
-      - name: Pnpm cache
-        uses: actions/cache@v4
-        id: pnpm-cache # use this to check for `cache-hit` (`steps.pnpm-cache.outputs.cache-hit != 'true'`)
-        with:
-          path: ${{ steps.pnpm-cache-dir-path.outputs.dir }}
-          key: ${{ runner.os }}-pnpm-${{ hashFiles('**/pnpm-lock.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-pnpm-
- 
       # 安装依赖执行构建，以及推送 github release
       - name: Install app dependencies and build it
       # 这里的pubhome要修改为你package.json里面配置的编译命令
-        run: pnpm install --no-frozen-lockfile && pnpm run tauri:build
+        run: pnpm install && pnpm run tauri:build
       - uses: tauri-apps/tauri-action@v0.5
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
